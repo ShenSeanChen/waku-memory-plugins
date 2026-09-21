@@ -1,0 +1,11 @@
+{
+  "name": "waku-memory",
+  "owner": { "name": "Waku" },
+  "plugins": [
+    {
+      "name": "waku",
+      "source": { "source": "npm", "package": "waku-memory" },
+      "description": "Memory that follows you across sessions"
+    }
+  ]
+}
