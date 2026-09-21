@@ -1,10 +1,25 @@
 # Waku Memory — plugin marketplace
 
-This repository is a pointer. It holds one file,
-`.agents/plugins/marketplace.json`, which tells Codex where the Waku Memory
-plugin lives: the npm package [`waku-memory`](https://www.npmjs.com/package/waku-memory).
+This repository is a pointer. It holds two files that tell a harness where
+the Waku Memory plugin lives, the npm package
+[`waku-memory`](https://www.npmjs.com/package/waku-memory):
+`.claude-plugin/marketplace.json` for Claude Code and
+`.agents/plugins/marketplace.json` for Codex.
 
-## Install
+## Install in Claude Code
+
+```
+/plugin install waku --marketplace ShenSeanChen/waku-memory-plugins
+```
+
+then `/mcp` and choose `waku` to sign in. On Claude Code before 2.1.275 the
+install is two commands: `/plugin marketplace add
+ShenSeanChen/waku-memory-plugins`, then `/plugin install waku@waku-memory`.
+Claude Code asks for no hook-trust step. The first prompt of a session brings
+the brief; each turn's reply is sent for extraction once you turn capture on
+at https://www.waku.one/integrations.
+
+## Install in Codex
 
 ```
 codex plugin marketplace add ShenSeanChen/waku-memory-plugins
