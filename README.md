@@ -45,6 +45,10 @@ Anthropic, which is what turns a session into memories. Tool output, the files
 the agent reads and the commands it runs are not sent, except where the agent
 quotes them in its own reply; its reasoning is never sent.
 
+Each prompt you give your agent is also sent, whether or not capture is on, so
+the memories that bear on it can be shown beside it. That prompt is used for
+that one search and is not stored.
+
 **This is an alpha, and its data can be lost.** Do not put anything here you
 cannot afford to lose.
 
