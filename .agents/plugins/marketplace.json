@@ -7,8 +7,8 @@
     {
       "name": "waku",
       "source": {
-        "source": "npm",
-        "package": "waku-memory"
+        "source": "local",
+        "path": "./plugins/waku"
       },
       "policy": {
         "installation": "AVAILABLE",
