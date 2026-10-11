@@ -2,7 +2,8 @@
 # Copy the plugin's files from the npm package's source into plugins/waku.
 #
 # The plugin is configuration only: a manifest per harness, the MCP server's
-# address, the hooks and the skill. Its source of truth is shim/ in
+# address, the hooks, the skill, and a second skill for harnesses that run
+# no hooks. Its source of truth is shim/ in
 # waku-memory-backend, which also builds the npm package. Run this after any
 # change there, then commit plugins/waku here. Pass the shim's path if the
 # backend repository is not beside this one.
@@ -10,7 +11,7 @@ set -eu
 here=$(cd "$(dirname "$0")/.." && pwd)
 shim=${1:-"$here/../waku-memory-backend/shim"}
 dest="$here/plugins/waku"
-for f in .claude-plugin .codex-plugin .mcp.json hooks skills LICENSE; do
+for f in .claude-plugin .codex-plugin .muse-plugin .mcp.json hooks skills skills-without-hooks LICENSE; do
   rm -rf "$dest/$f"
   cp -R "$shim/$f" "$dest/$f"
 done
