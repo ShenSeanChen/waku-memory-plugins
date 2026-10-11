@@ -10,6 +10,10 @@ which also builds the npm package
 [`waku-memory`](https://www.npmjs.com/package/waku-memory). After a change
 there, run `scripts/sync-from-shim.sh` and commit `plugins/waku`.
 
+`openai/` holds the package for OpenAI's plugin directory, which lists plugins
+in ChatGPT and Codex. That directory refuses hooks, so the package drops them.
+`openai/README.md` says how to build it.
+
 ## Install in Claude Code
 
 ```

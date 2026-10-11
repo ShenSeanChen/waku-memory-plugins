@@ -1,6 +1,6 @@
 ---
 name: waku
-description: Durable memory for this person across sessions and agents. Use memory.search when a task depends on something you were not told, and memory.remember for something worth keeping.
+description: Durable memory for this person across sessions and agents. Use memory.search when a task depends on the person's own preferences, decisions or earlier work, and memory.remember for something worth keeping.
 ---
 
 Waku Memory keeps what a person tells their agents and what their agents
@@ -8,11 +8,12 @@ learn, and brings it back into later sessions. This harness runs no Waku
 hooks. No brief arrives at the start of a session, and nothing is added to
 a prompt on its own. The tools below are the only way in or out.
 
-- When a task starts, call `memory.search` once with the task in the
-  person's words. The matching memories come back with why each matched.
-- Call `memory.search` again when a task depends on a preference, a
-  decision or a fact you do not have, or when the person asks what is
-  known about something.
+- Call `memory.search` when a task depends on the person's own
+  preferences, decisions, projects or earlier work, or when the person
+  asks what is known about something. Use one query in the person's
+  words. The matching memories come back with why each matched.
+- Do not call `memory.search` for general knowledge, or for a task that
+  does not involve the person's own work.
 - Call `memory.remember` when the person states a preference, a decision,
   a procedure or a fact they will want next time. Use their words. Do not
   store secrets, credentials or file contents.
