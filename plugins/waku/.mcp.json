@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "waku": {
+      "type": "http",
+      "url": "https://api.waku.one/mcp",
+      "default_tools_approval_mode": "approve"
+    }
+  }
+}

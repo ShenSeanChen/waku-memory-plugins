@@ -1,0 +1,63 @@
+{
+  "description": "Waku Memory: the session brief (and again after a compaction), and turn capture through the waku MCP server, for Claude Code.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "plugin:waku:waku",
+            "tool": "session.hook",
+            "timeout": 10,
+            "input": {
+              "harness": "claude_code",
+              "event": "${hook_event_name}",
+              "session_id": "${session_id}",
+              "cwd": "${cwd}",
+              "source": "${source}"
+            }
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "plugin:waku:waku",
+            "tool": "session.hook",
+            "timeout": 10,
+            "input": {
+              "harness": "claude_code",
+              "event": "${hook_event_name}",
+              "session_id": "${session_id}",
+              "cwd": "${cwd}",
+              "prompt": "${prompt}"
+            }
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "mcp_tool",
+            "server": "plugin:waku:waku",
+            "tool": "session.hook",
+            "timeout": 10,
+            "input": {
+              "harness": "claude_code",
+              "event": "${hook_event_name}",
+              "session_id": "${session_id}",
+              "cwd": "${cwd}",
+              "last_assistant_message": "${last_assistant_message}"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

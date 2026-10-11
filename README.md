@@ -1,10 +1,14 @@
 # Waku Memory — plugin marketplace
 
-This repository is a pointer. It holds two files that tell a harness where
-the Waku Memory plugin lives, the npm package
-[`waku-memory`](https://www.npmjs.com/package/waku-memory):
-`.claude-plugin/marketplace.json` for Claude Code and
-`.agents/plugins/marketplace.json` for Codex.
+This repository holds the Waku Memory plugin, in `plugins/waku`, and the two
+files that list it: `.claude-plugin/marketplace.json` for Claude Code and
+`.agents/plugins/marketplace.json` for Codex. Both harnesses read the plugin
+straight from this repository, so installing it needs neither Node nor npm.
+
+The plugin's source of truth is `shim/` in the private backend repository,
+which also builds the npm package
+[`waku-memory`](https://www.npmjs.com/package/waku-memory). After a change
+there, run `scripts/sync-from-shim.sh` and commit `plugins/waku`.
 
 ## Install in Claude Code
 
@@ -12,7 +16,9 @@ the Waku Memory plugin lives, the npm package
 /plugin install waku --marketplace ShenSeanChen/waku-memory-plugins
 ```
 
-then `/mcp` and choose `waku` to sign in. On Claude Code before 2.1.275 the
+then `/mcp` and choose `waku` to sign in. From a shell, the same install is
+`claude plugin install waku --marketplace ShenSeanChen/waku-memory-plugins`
+(Claude Code 2.1.292 or later). On Claude Code before 2.1.275 the
 install is two commands: `/plugin marketplace add
 ShenSeanChen/waku-memory-plugins`, then `/plugin install waku@waku-memory`.
 Claude Code asks for no hook-trust step. The first prompt of a session brings

@@ -1,10 +1,11 @@
 {
   "name": "waku-memory",
+  "description": "Waku Memory: memory that follows you across sessions and agents",
   "owner": { "name": "Waku" },
   "plugins": [
     {
       "name": "waku",
-      "source": { "source": "npm", "package": "waku-memory" },
+      "source": "./plugins/waku",
       "description": "Memory that follows you across sessions"
     }
   ]
