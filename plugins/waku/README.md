@@ -15,6 +15,9 @@ next one, on any machine.
   brings it again, and each turn's reply is sent for extraction once you turn
   capture on at https://www.waku.one/integrations.
 - One skill that tells the agent when to search and when to remember.
+- A manifest for Muse Code, which runs none of the hooks. Muse loads the
+  skill in `skills-without-hooks/` instead, which tells the agent that no
+  brief arrives and that it has to search for itself.
 
 Nothing runs on your machine. The plugin holds no program and installs no
 package; the hooks and tools reach the server through the sign-in you open.
@@ -31,6 +34,21 @@ Then run `/mcp`, choose `waku` and finish in the browser. In Codex, run
 `codex plugin marketplace add ShenSeanChen/waku-memory-plugins` and then
 `codex plugin add waku@waku-memory`. The install opens the browser sign-in, and Codex then asks you to trust the
 plugin's hooks once in `/hooks`.
+
+Muse Code installs plugins behind an experimental switch. We have not run
+these commands on Muse ourselves yet:
+
+```
+export MUSE_EXPERIMENTAL_PLUGINS=1
+muse plugins marketplace add waku-memory ShenSeanChen/waku-memory-plugins
+muse plugins install waku@waku-memory
+muse plugins approve waku
+muse mcp login waku
+```
+
+On Muse, Waku has the memory tools and the skill only. No brief arrives at the
+start of a session, nothing is captured, and Waku receives only what the agent
+passes to its tools.
 
 ## What it sends
 

@@ -37,6 +37,23 @@ stores the credential where Codex keeps it. Codex then asks you to review and
 trust the plugin's three hooks. Until you trust them, the session brief and the
 capture do not run — open `/hooks` in Codex to do it.
 
+## Install in Muse Code
+
+Muse Code reads the same marketplace files and installs plugins behind an
+experimental switch. We have not run these commands on Muse ourselves yet:
+
+```
+export MUSE_EXPERIMENTAL_PLUGINS=1
+muse plugins marketplace add waku-memory ShenSeanChen/waku-memory-plugins
+muse plugins install waku@waku-memory
+muse plugins approve waku
+muse mcp login waku
+```
+
+Muse runs none of the plugin's hooks. On Muse, Waku has the memory tools and a
+skill that tells the agent to search for itself. No brief arrives and nothing
+is captured.
+
 ## What it does
 
 Waku Memory keeps what you tell your agents and what they learn, and brings it
