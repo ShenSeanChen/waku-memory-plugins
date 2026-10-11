@@ -6,11 +6,11 @@
     "name": "Waku"
   },
   "homepage": "https://www.waku.one/",
-  "repository": "https://github.com/ShenSeanChen/waku-memory-plugins",
+  "repository": "https://github.com/waku-one/waku-memory-plugins",
   "privacyPolicyUrl": "https://www.waku.one/privacy",
   "termsOfServiceUrl": "https://www.waku.one/terms",
   "documentationUrl": "https://www.waku.one/docs",
-  "supportUrl": "https://github.com/ShenSeanChen/waku-memory-plugins/issues",
+  "supportUrl": "https://github.com/waku-one/waku-memory-plugins/issues",
   "hooks": "./hooks/claude-code.json",
   "skills": "./skills/"
 }

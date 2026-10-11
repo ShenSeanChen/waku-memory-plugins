@@ -24,11 +24,11 @@ package; the hooks and tools reach the server through the sign-in you open.
 In Claude Code, install the plugin with one command:
 
 ```
-/plugin install waku --marketplace ShenSeanChen/waku-memory-plugins
+/plugin install waku --marketplace waku-one/waku-memory-plugins
 ```
 
 Then run `/mcp`, choose `waku` and finish in the browser. In Codex, run
-`codex plugin marketplace add ShenSeanChen/waku-memory-plugins` and then
+`codex plugin marketplace add waku-one/waku-memory-plugins` and then
 `codex plugin add waku@waku-memory`. The install opens the browser sign-in, and Codex then asks you to trust the
 plugin's hooks once in `/hooks`.
 

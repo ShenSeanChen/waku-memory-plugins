@@ -13,14 +13,14 @@ there, run `scripts/sync-from-shim.sh` and commit `plugins/waku`.
 ## Install in Claude Code
 
 ```
-/plugin install waku --marketplace ShenSeanChen/waku-memory-plugins
+/plugin install waku --marketplace waku-one/waku-memory-plugins
 ```
 
 then `/mcp` and choose `waku` to sign in. From a shell, the same install is
-`claude plugin install waku --marketplace ShenSeanChen/waku-memory-plugins`
+`claude plugin install waku --marketplace waku-one/waku-memory-plugins`
 (Claude Code 2.1.292 or later). On Claude Code before 2.1.275 the
 install is two commands: `/plugin marketplace add
-ShenSeanChen/waku-memory-plugins`, then `/plugin install waku@waku-memory`.
+waku-one/waku-memory-plugins`, then `/plugin install waku@waku-memory`.
 Claude Code asks for no hook-trust step. The first prompt of a session brings
 the brief; each turn's reply is sent for extraction once you turn capture on
 at https://www.waku.one/integrations.
@@ -28,7 +28,7 @@ at https://www.waku.one/integrations.
 ## Install in Codex
 
 ```
-codex plugin marketplace add ShenSeanChen/waku-memory-plugins
+codex plugin marketplace add waku-one/waku-memory-plugins
 codex plugin add waku@waku-memory
 ```
 
